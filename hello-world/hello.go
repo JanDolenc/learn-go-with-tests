@@ -5,9 +5,13 @@ import "fmt"
 // Separate concerns: "domain" code from the outside world (side-effects)
 // Why? To make it easier to test
 
+// Go has constants
+// Creating constants (or variables) to capture meaning of values and sometimes improve performance
+const englishHelloPrefix = "Hello, "
+
 // Domain is the "Hello world!" string
 func Hello(name string) string {
-	return "Hello, " + name + "!"
+	return englishHelloPrefix + name + "!"
 }
 
 func main() {
