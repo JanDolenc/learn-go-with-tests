@@ -11,6 +11,9 @@ const englishHelloPrefix = "Hello, "
 
 // Domain is the "Hello world!" string
 func Hello(name string) string {
+	if name == "" {
+		name = "World"
+	}
 	return englishHelloPrefix + name + "!"
 }
 
