@@ -8,8 +8,10 @@ import "fmt"
 // Go has constants
 // Creating constants (or variables) to capture meaning of values and sometimes improve performance
 const spanish = "Spanish"
+const french = "French"
 const englishHelloPrefix = "Hello, "
 const spanishHelloPrefix = "Hola, "
+const frenchHelloPrefix = "Bonjour, "
 
 // Domain is the "Hello world!" string
 func Hello(name string, language string) string {
@@ -19,6 +21,10 @@ func Hello(name string, language string) string {
 
 	if language == spanish {
 		return spanishHelloPrefix + name + "!"
+	}
+
+	if language == french {
+		return frenchHelloPrefix + name + "!"
 	}
 
 	return englishHelloPrefix + name + "!"
