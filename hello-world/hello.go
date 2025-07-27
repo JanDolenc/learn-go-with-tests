@@ -9,9 +9,11 @@ import "fmt"
 // Creating constants (or variables) to capture meaning of values and sometimes improve performance
 const spanish = "Spanish"
 const french = "French"
+const slovenian = "Slovenian"
 const englishHelloPrefix = "Hello, "
 const spanishHelloPrefix = "Hola, "
 const frenchHelloPrefix = "Bonjour, "
+const slovenianHelloPrefix = "Živjo, "
 
 // Domain is the "Hello world!" string
 func Hello(name string, language string) string {
@@ -19,18 +21,23 @@ func Hello(name string, language string) string {
 		name = "World"
 	}
 
-	if language == spanish {
-		return spanishHelloPrefix + name + "!"
+	prefix := englishHelloPrefix
+
+	switch language {
+	case spanish:
+		prefix = spanishHelloPrefix
+
+	case french:
+		prefix = frenchHelloPrefix
+
+	case slovenian:
+		prefix = slovenianHelloPrefix
 	}
 
-	if language == french {
-		return frenchHelloPrefix + name + "!"
-	}
-
-	return englishHelloPrefix + name + "!"
+	return prefix + name + "!"
 }
 
 func main() {
 	// Println (printing to stdout) is a side effect
-	fmt.Println(Hello("Jan", ""))
+	fmt.Println(Hello("Jan", "Slovenian"))
 }
