@@ -7,6 +7,9 @@ const englishHelloPrefix = "Hello, "
 // Domain code - Hello() should be separated from side effects - printing to the stdout
 // Why? To make it easier to test our code.
 func Hello(name string) string {
+	if name == "" {
+		name = "World"
+	}
 	return englishHelloPrefix + name
 }
 
