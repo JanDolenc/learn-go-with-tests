@@ -4,8 +4,10 @@ import "fmt"
 
 const (
 	spanish            = "Spanish"
+	french             = "French"
 	englishHelloPrefix = "Hello, "
 	spanishHelloPrefix = "Hola, "
+	frenchHelloPrefix  = "Bonjour, "
 )
 
 // Domain code - Hello() should be separated from side effects - printing to the stdout
@@ -17,6 +19,10 @@ func Hello(name, language string) string {
 
 	if language == spanish {
 		return spanishHelloPrefix + name
+	}
+
+	if language == french {
+		return frenchHelloPrefix + name
 	}
 
 	return englishHelloPrefix + name
