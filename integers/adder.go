@@ -5,6 +5,7 @@
 // warning and nudges you to follow Go's documentation best practices.
 package integers
 
+// Add takes two integers and returns the sum of them.
 func Add(x, y int) int {
 	return x + y
 }
