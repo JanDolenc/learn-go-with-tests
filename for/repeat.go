@@ -1,13 +1,15 @@
 // Package iteration, includes examples how to do stuff repeatedly in Go.
 package iteration
 
+import "strings"
+
 const repeatCount = 5
 
 // Repeat returns character repeated 5 times.
 func Repeat(character string) string {
-	var repeated string
+	var repeated strings.Builder
 	for i := 0; i < repeatCount; i++ {
-		repeated += character
+		repeated.WriteString(character)
 	}
-	return repeated
+	return repeated.String()
 }
