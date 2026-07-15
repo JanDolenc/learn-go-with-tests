@@ -1,7 +1,7 @@
 package arrays
 
 import (
-	"slices"
+	"reflect"
 	"testing"
 )
 
@@ -18,14 +18,14 @@ func TestSum(t *testing.T) {
 	})
 }
 
-func TestSumAll(t *testing.T) {
+func TestSumAllTails(t *testing.T) {
 	n1 := []int{1, 2}
 	n2 := []int{0, 9}
 
-	got := SumAll(n1, n2)
-	want := []int{3, 9}
+	got := SumAllTails(n1, n2)
+	want := []int{2, 9}
 
-	if !slices.Equal(got, want) {
+	if !reflect.DeepEqual(got, want) {
 		t.Errorf("got %v want %v", got, want)
 	}
 }
